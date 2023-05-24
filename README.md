@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+This project was originally created using https://github.com/benlow22/Poke-Buddy , but has been cloned and tweaked for deployment on Vercel. The original had modifications to package.json that prepped it for github Pages.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
