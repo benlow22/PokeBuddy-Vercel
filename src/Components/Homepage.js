@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { TypeList } from "./typeList/TypeList";
 import { TypeIndicator } from "./typeIndicators/TypeIndicators";
 import { pokemonTypes, keys } from "../database";
-import { StatBox } from "./statBox/StatBox";
 import { ResistantTo } from "./resistantTo/ResistantTo";
+import { WeakTo } from "./weakTo/WeakTo";
 
 export function Homepage() {
 	const [type1, setType1] = useState("Type 1");
@@ -51,13 +51,12 @@ export function Homepage() {
 	return (
 		<div>
 			<div className="opponent-Stats">
-				<StatBox status="Resistant" type1={type1} type2={type2} />
 				<ResistantTo type1={type1} type2={type2} />
 				<div className="two-types">
 					<TypeIndicator type={type1} />
 					<TypeIndicator type1={type1} type={type2} />
 				</div>
-				<StatBox status="Weak" type1={type1} type2={type2} />
+				<WeakTo type1={type1} type2={type2} />
 			</div>
 			<div className="list-Of-Buttons">
 				<TypeList onAdd={handleAdd} />

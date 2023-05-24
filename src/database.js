@@ -149,10 +149,10 @@ export const checkTypes = (state1, state2) => {
 				effectObj.normal.push(pokemonTypes[index]);
 			}
 			if (effectiveness === 1.6 * 1.6) {
-				effectObj.weakTo.push(pokemonTypes[index]);
+				effectObj.veryWeakTo.push(pokemonTypes[index]);
 			}
 			if (effectiveness === 1.6) {
-				effectObj.veryWeakTo.push(pokemonTypes[index]);
+				effectObj.weakTo.push(pokemonTypes[index]);
 			}
 		});
 	};
