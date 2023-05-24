@@ -238,6 +238,8 @@ h5 {
 }
 
 .types-box {
-  min-height: 48px;
-
+  height: 48px;
+  display: flex;
+  flex-wrap: inherit;
+  justify-content: center;
 }
