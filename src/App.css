@@ -185,6 +185,8 @@ p {
 h5 {
   font-size: 20px;
   display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .statBox{
   background-color: #b4b3b3;
