@@ -158,12 +158,12 @@ button:disabled {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
-  width: 250px;
+  width: 350px;
   align-content: center;
 }
 .type-indicator {
   height: 90px;
-  width: 200px;
+  width: 210px;
   align-self: center;
   color: white;
   font-size: 40px;
@@ -178,6 +178,17 @@ h4 {
 
 }
 
+.stat-box p {
+  font-size: small;
+  color: rgb(4, 3, 3);
+}
+
+.stat-box.weak {
+  border-color: #1ba814
+}
+.stat-box.resistant {
+  border-color: #a21212
+}
 p {
   margin: 0;
 }
@@ -185,14 +196,16 @@ p {
 h5 {
   font-size: 20px;
   display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
-.statBox{
+.stat-box{
   background-color: #b4b3b3;
   height: 400px;
   width: 300px;
+  border-style: solid;
   border-radius: 20px;
-  border: #f90000;
-  border-width: px;
+  border-width: 10px;
   margin: 25px 5px;
   padding: 15px;
   display: flexbox;
@@ -222,4 +235,9 @@ h5 {
 
 :root {
   --water-color: #4d91d2;
+}
+
+.types-box {
+  min-height: 48px;
+
 }

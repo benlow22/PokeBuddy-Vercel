@@ -19,7 +19,7 @@ export function StatBox (props) {
 
     
     return (
-        <div className="statBox">
+        <div className="stat-box">
             <h4>{status} to </h4>
             <h5>{multiplierLabels[0]} damage from</h5>
             <SmallButtonHolder type1={type1} type2={type2} status={status} multiplier={1}/>
@@ -28,3 +28,4 @@ export function StatBox (props) {
       </div>
     )
 }
+ 
