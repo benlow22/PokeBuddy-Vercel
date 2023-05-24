@@ -1,6 +1,6 @@
 import logo from "./pokemonLogo.jpeg";
 import "./App.css";
-import { Homepage } from "./components/Homepage";
+import { Homepage } from "./Components/Homepage";
 
 function App() {
 	return (
