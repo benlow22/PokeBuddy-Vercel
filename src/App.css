@@ -225,3 +225,8 @@ h5 {
 :root {
   --water-color: #4d91d2;
 }
+
+.types-box {
+  min-height: 48px;
+
+}
