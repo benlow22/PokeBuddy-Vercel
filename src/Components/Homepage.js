@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { TypeList } from './typeList/TypeList';
 import { TypeIndicator } from './typeIndicators/TypeIndicators';
-import { pokemonTypes, keys } from '.././database';
+import { pokemonTypes, keys } from '../database';
 import { StatBox } from './statBox/StatBox';
 
 export function Homepage () {
