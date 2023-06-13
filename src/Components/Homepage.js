@@ -6,22 +6,22 @@ import { ResistantTo } from "./resistantTo/ResistantTo";
 import { WeakTo } from "./weakTo/WeakTo";
 
 export function Homepage() {
-	const [type1, setType1] = useState("Type 1");
-	const [type2, setType2] = useState("Type 2");
+	const [type1, setType1] = useState(undefined);
+	const [type2, setType2] = useState(undefined);
 
 	const handleAdd = (type) => {
-		if (type1 === "Type 1") {
+		if (!type1) {
 			setType1(type);
 		} else {
-			if (type !== type1) {
+			if (type1 !== type) {
 				setType2(type);
 			}
 		}
 	};
 
 	const clearButtons = () => {
-		setType1("Type 1");
-		setType2("Type 2");
+		setType1(undefined);
+		setType2(undefined);
 	};
 
 	useEffect(() => {
@@ -53,8 +53,11 @@ export function Homepage() {
 			<div className="opponent-Stats">
 				<ResistantTo type1={type1} type2={type2} />
 				<div className="two-types">
-					<TypeIndicator type={type1} />
-					<TypeIndicator type1={type1} type={type2} />
+					<TypeIndicator type={type1} placeholder={"Type 1"} />
+					<TypeIndicator type={type2} placeholder={"Type 2"} />
+					<button className="reset-button" onClick={clearButtons}>
+						RESET
+					</button>
 				</div>
 				<WeakTo type1={type1} type2={type2} />
 			</div>

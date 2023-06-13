@@ -1,245 +1,242 @@
 .App {
-  text-align: center;
-  background-color: #444444;
+	text-align: center;
+	background-color: #444444;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 .pokemon_Logo {
-  max-height: 300px;
+	max-height: 300px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 button {
-  color: white;
-  font-size: 1.5rem;
-  font-family: Arial;
-  font-variant-caps: small-caps;
-  margin: 0.75rem;
-  width: 105px;
-  padding: 6px;
-  border-radius: 10px;
-  text-shadow: 0 1px 1px rgb(207, 207, 207);
-  box-shadow: 
-    0 0 0 1px #b3b3b3 inset,
-    0 0 0 2px rgba(255, 255, 255, 0.15) inset,
-    0 4px 0 0 #444444,
-    0 4px 0 1px rgba(0, 0, 0, 0.4),
-    0 5px 4px 1px rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 1.5rem;
+	font-family: Arial;
+	font-variant-caps: small-caps;
+	margin: 0.75rem;
+	width: 105px;
+	padding: 6px;
+	border-radius: 10px;
+	text-shadow: 0 1px 1px rgb(207, 207, 207);
+	box-shadow: 0 0 0 1px #b3b3b3 inset,
+		0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 4px 0 0 #444444,
+		0 4px 0 1px rgba(0, 0, 0, 0.4), 0 5px 4px 1px rgba(0, 0, 0, 0.5);
 }
 
 button:active {
-  color: rgba(255, 255, 255, 0);
+	color: rgba(255, 255, 255, 0);
 }
 
 button:disabled {
-  color: white;
+	color: white;
 }
 
 .small-button {
-  width:75px;
-  font-size: 1.10rem;
-  font-family: Arial;
-  font-variant-caps: small-caps;
-  margin: 0.35rem;
-  padding: 6px;
-  border-radius: 10px;
-  text-shadow: 0 1px 1px rgb(207, 207, 207);
-  display: inline;
-
+	width: 75px;
+	font-size: 1.1rem;
+	font-family: Arial;
+	font-variant-caps: small-caps;
+	margin: 0.35rem;
+	padding: 6px;
+	border-radius: 10px;
+	text-shadow: 0 1px 1px rgb(207, 207, 207);
+	display: inline;
 }
 
 .full-List {
-  max-width: 675px;
-
+	max-width: 675px;
 }
 
-.list-Of-Buttons{
-  display:flex;
-  justify-content: center;
+.list-Of-Buttons {
+	display: flex;
+	justify-content: center;
 }
 
 .Bug {
-  background-color: #8ebc2e;
+	background-color: #8ebc2e;
 }
 
 .Dark {
-  background-color: #5b545d;
+	background-color: #5b545d;
 }
 
 .Dragon {
-  background-color: #0074d6;
+	background-color: #0074d6;
 }
 
 .Electric {
-  background-color: #f7d041;
+	background-color: #f7d041;
 }
 
 .Fairy {
-  background-color: #e792e8
+	background-color: #e792e8;
 }
 
 .Fighting {
-  background-color: #d23c67;
+	background-color: #d23c67;
 }
 
 .Fire {
-  background-color: #fc9b59;
+	background-color: #fc9b59;
 }
 
 .Flying {
-  background-color: #92a7e4;
+	background-color: #92a7e4;
 }
 
 .Ghost {
-  background-color: #516aac;
+	background-color: #516aac;
 }
 
 .Grass {
-  background-color: #62bf57;
+	background-color: #62bf57;
 }
 
 .Ground {
-  background-color: #dd7443;
+	background-color: #dd7443;
 }
 
 .Ice {
-  background-color: #72d1c1;
+	background-color: #72d1c1;
 }
 
 .Normal {
-  background-color: #909aa3;
+	background-color: #909aa3;
 }
 
 .Poison {
-  background-color: #b167c6;
+	background-color: #b167c6;
 }
 
 .Psychic {
-  background-color: #fa7578;
+	background-color: #fa7578;
 }
 
 .Rock {
-  background-color: #c8b58d;
+	background-color: #c8b58d;
 }
 
 .Steel {
-  background-color: #578fa6;
+	background-color: #578fa6;
 }
 
 .Water {
-  background-color: var(--water-color);
+	background-color: var(--water-color);
 }
 
-.opponent-Stats{
-  display: flex;
-  justify-content: center;
-  min-height: 400px;
+.opponent-Stats {
+	display: flex;
+	justify-content: center;
+	min-height: 400px;
 }
 .two-types {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
-  width: 350px;
-  align-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 350px;
+	align-content: center;
 }
 .type-indicator {
-  height: 90px;
-  width: 210px;
-  align-self: center;
-  color: white;
-  font-size: 40px;
-  
+	height: 90px;
+	width: 210px;
+	align-self: center;
+	color: white;
+	font-size: 40px;
 }
 
-
 h4 {
-  color: rgb(109, 109, 109);
-  font-size: 35px;
-  margin: 0;
-
+	color: rgb(109, 109, 109);
+	font-size: 35px;
+	margin: 0;
 }
 
 .stat-box p {
-  font-size: small;
-  color: rgb(4, 3, 3);
+	font-size: small;
+	color: rgb(4, 3, 3);
 }
 
 .stat-box.weak {
-  border-color: #1ba814
+	border-color: #1ba814;
 }
 .stat-box.resistant {
-  border-color: #a21212
+	border-color: #a21212;
 }
 p {
-  margin: 0;
+	margin: 0;
 }
 
 h5 {
-  font-size: 20px;
-  display: flex;
-  margin-top: 0px;
-  margin-bottom: 0px;
+	font-size: 20px;
+	display: flex;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
-.stat-box{
-  background-color: #b4b3b3;
-  height: 410px;
-  width: 300px;
-  border-style: solid;
-  border-radius: 20px;
-  border-width: 10px;
-  margin: 25px 5px;
-  padding: 15px;
-  display: flexbox;
-  align-content: flex-start;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap
+.stat-box {
+	background-color: #b4b3b3;
+	height: 410px;
+	width: 300px;
+	border-style: solid;
+	border-radius: 20px;
+	border-width: 10px;
+	margin: 25px 5px;
+	padding: 15px;
+	display: flexbox;
+	align-content: flex-start;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
 }
 
 .type-buttons {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 :root {
-  --water-color: #4d91d2;
+	--water-color: #4d91d2;
 }
 
 .types-box {
-  height: 48px;
-  display: flex;
-  flex-wrap: inherit;
-  justify-content: center;
+	height: 48px;
+	display: flex;
+	flex-wrap: inherit;
+	justify-content: center;
+}
+
+.reset-button {
+	margin-top: 50px;
+	background-color: rgb(103, 103, 103);
 }
