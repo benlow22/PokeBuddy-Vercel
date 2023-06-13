@@ -1,16 +1,12 @@
 import React from "react";
 
-
-export function TypeIndicator (props) {
-    return (       
-        <button disabled
-            className={`type-indicator ${props.type}`} >
-                {props.type}
-        </button>    )
-
-};
-
-
+export function TypeIndicator(props) {
+	return (
+		<button disabled className={`type-indicator ${props.type}`}>
+			{props.type ? props.type : props.placeholder}
+		</button>
+	);
+}
 
 /* export class TypeIndicator extends React.Component {
 
