@@ -18,6 +18,40 @@ export function Homepage() {
 			}
 		}
 	};
+	// used API to get ATTACK stats
+	// const attackStats = async () => {
+	// 	fetch("https://pogoapi.net/api/v1/type_effectiveness.json")
+	// 		.then(
+	// 			(response) => {
+	// 				if (response.ok) {
+	// 					return response.json();
+	// 				}
+	// 				throw new Error("Request failed!");
+	// 			},
+	// 			(networkError) => {
+	// 				console.log(networkError.message);
+	// 			}
+	// 		)
+	// 		.then((jsonResponse) => {
+	// 			console.log(jsonResponse);
+	// 			for (const [key, value] of Object.entries(jsonResponse)) {
+	// 				// console.log("key", key);
+
+	// 				if (key === 1) {
+	// 					console.log(value);
+	// 				}
+	// 				const attackStats = Object.values(jsonResponse[key]);
+	// 				// console.log('att stats in arr"', attackStats);
+	// 				Object.defineProperty(jsonResponse, key, {
+	// 					value: attackStats,
+	// 				});
+	// 				// console.log("updating json", jsonResponse);
+	// 			}
+	// 			return jsonResponse;
+	// 		});
+	// };
+
+	// const stats = attackStats();
 
 	const clearButtons = () => {
 		setType1(undefined);
@@ -36,7 +70,6 @@ export function Homepage() {
 		if (keys.includes(event.code)) {
 			// checks if code is in array
 			let index = keys.findIndex((key) => key === event.code); // returns index in keys array
-			console.log(index);
 			handleAdd(pokemonTypes[index - 1]); // uses index to add type to state
 		}
 	};
