@@ -1,27 +1,24 @@
 import { Button } from "../button/Button";
 import React from "react";
-import { pokemonTypes } from '../../database.js';
+import { pokemonTypes } from "../../database.js";
 
+export function TypeList(props) {
+	const handleClick = (type) => {
+		props.onAdd(type);
+	};
 
-export function TypeList (props) {
-
-
-    const handleClick = (type) => {
-        props.onAdd(type);
-    }
-
-    return (
-        <div className="full-List">
-            {pokemonTypes.map(type=>{
-                return (
-                    <Button 
-                        typeName={type} 
-                        onClick={handleClick} 
-                        //id={type} 
-                        //key={type}
-                    />
-                )
-            })}           
-        </div>
-    )
+	return (
+		<div className="full-List">
+			{pokemonTypes.map((type, index) => {
+				return (
+					<Button
+						typeName={type}
+						onClick={handleClick}
+						//id={type}
+						key={`${type}-${index}`}
+					/>
+				);
+			})}
+		</div>
+	);
 }

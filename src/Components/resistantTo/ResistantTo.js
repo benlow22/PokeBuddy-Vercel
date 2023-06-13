@@ -14,15 +14,25 @@ export function ResistantTo(props) {
 				<h5>0.244x damage from</h5>
 				<div className="extra-resistant-types types-box">
 					{effectiveness.extraResistant &&
-						effectiveness.extraResistant.map((type) => {
-							return <SmallButton typeName={type} />;
+						effectiveness.extraResistant.map((type, index) => {
+							return (
+								<SmallButton
+									typeName={type}
+									key={`${index}-${type}`}
+								/>
+							);
 						})}
 				</div>
 				<h5>0.391x damage from</h5>
 				<div className="very-resistant-types types-box">
 					{effectiveness.veryResistant &&
-						effectiveness.veryResistant.map((type) => {
-							return <SmallButton typeName={type} />;
+						effectiveness.veryResistant.map((type, index) => {
+							return (
+								<SmallButton
+									typeName={type}
+									key={`${index}-${type}`}
+								/>
+							);
 						})}
 				</div>
 				<h5>0.625x damage from</h5>
