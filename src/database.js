@@ -131,9 +131,6 @@ export const checkTypes = (state1, state2) => {
 		veryWeakTo: [],
 	};
 
-	let arrayToSort = typeEffectiveness[state1];
-	console.log(typeEffectiveness[state1]);
-
 	const sortThroughArray = (array) => {
 		array.forEach((effectiveness, index) => {
 			if (effectiveness === 0.244375) {
@@ -157,12 +154,12 @@ export const checkTypes = (state1, state2) => {
 		});
 	};
 
-	if (state2 === "Type 2") {
+	if (state1 && !state2) {
 		// only one state
-		sortThroughArray(arrayToSort);
+		sortThroughArray(typeEffectiveness[state1]);
 	}
 
-	if (state1 !== "Type 1" && state2 !== "Type 2") {
+	if (state1 && state2) {
 		let mergedArr = typeEffectiveness[state1].map(
 			(type1, index) => type1 * typeEffectiveness[state2][index]
 		);
