@@ -103,6 +103,71 @@ export const typeEffectiveness = {
 		0.625,
 	],
 };
+
+const attackStats = {
+	Bug: [
+		1, 1.6, 1, 1, 0.625, 0.625, 0.625, 0.625, 0.625, 1.6, 1, 1, 1, 0.625,
+		1.6, 1, 0.625, 1,
+	],
+	Dark: [
+		1, 0.625, 1, 1, 0.625, 0.625, 1, 1, 1.6, 1, 1, 1, 1, 1, 1.6, 1, 1, 1,
+	],
+	Dragon: [1, 1, 1.6, 1, 0.390625, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.625, 1],
+	Electric: [
+		1, 1, 0.625, 0.625, 1, 1, 1, 1.6, 1, 0.625, 0.390625, 1, 1, 1, 1, 1, 1,
+		1.6,
+	],
+	Fairy: [
+		1, 1.6, 1.6, 1, 1, 1.6, 0.625, 1, 1, 1, 1, 1, 1, 0.625, 1, 1, 0.625, 1,
+	],
+	Fighting: [
+		0.625, 1.6, 1, 1, 0.625, 1, 1, 0.625, 0.390625, 1, 1, 1.6, 1.6, 0.625,
+		0.625, 1.6, 1.6, 1,
+	],
+	Fire: [
+		1.6, 1, 0.625, 1, 1, 1, 0.625, 1, 1, 1.6, 1, 1.6, 1, 1, 1, 0.625, 1.6,
+		0.625,
+	],
+	Flying: [
+		1.6, 1, 1, 0.625, 1, 1.6, 1, 1, 1, 1.6, 1, 1, 1, 1, 1, 0.625, 0.625, 1,
+	],
+	Ghost: [
+		1, 0.625, 1, 1, 1, 1, 1, 1, 1.6, 1, 1, 1, 0.390625, 1, 1.6, 1, 1, 1,
+	],
+	Grass: [
+		0.625, 1, 0.625, 1, 1, 1, 0.625, 0.625, 1, 0.625, 1.6, 1, 1, 0.625, 1,
+		1.6, 0.625, 1.6,
+	],
+	Ground: [
+		0.625, 1, 1, 1.6, 1, 1, 1.6, 0.390625, 1, 0.625, 1, 1, 1, 1.6, 1, 1.6,
+		1.6, 1,
+	],
+	Ice: [
+		1, 1, 1.6, 1, 1, 1, 0.625, 1.6, 1, 1.6, 1.6, 0.625, 1, 1, 1, 1, 0.625,
+		0.625,
+	],
+	Normal: [
+		1, 1, 1, 1, 1, 1, 1, 1, 0.390625, 1, 1, 1, 1, 1, 1, 0.625, 0.625, 1,
+	],
+	Poison: [
+		1, 1, 1, 1, 1.6, 1, 1, 1, 0.625, 1.6, 0.625, 1, 1, 0.625, 1, 0.625,
+		0.390625, 1,
+	],
+	Psychic: [
+		1, 0.390625, 1, 1, 1, 1.6, 1, 1, 1, 1, 1, 1, 1, 1.6, 0.625, 1, 0.625, 1,
+	],
+	Rock: [
+		1.6, 1, 1, 1, 1, 0.625, 1.6, 1.6, 1, 1, 0.625, 1.6, 1, 1, 1, 1, 0.625,
+		1,
+	],
+	Steel: [
+		1, 1, 1, 0.625, 1.6, 1, 0.625, 1, 1, 1, 1, 1.6, 1, 1, 1, 1.6, 0.625,
+		0.625,
+	],
+	Water: [
+		1, 1, 0.625, 1, 1, 1, 1.6, 1, 1, 0.625, 1.6, 1, 1, 1, 1, 1.6, 1, 0.625,
+	],
+};
 /*
 typeEffectiveness.Bug.map((effectiveness, index) => {
     if (effectiveness === 1) {
@@ -131,9 +196,6 @@ export const checkTypes = (state1, state2) => {
 		veryWeakTo: [],
 	};
 
-	let arrayToSort = typeEffectiveness[state1];
-	console.log(typeEffectiveness[state1]);
-
 	const sortThroughArray = (array) => {
 		array.forEach((effectiveness, index) => {
 			if (effectiveness === 0.244375) {
@@ -157,12 +219,12 @@ export const checkTypes = (state1, state2) => {
 		});
 	};
 
-	if (state2 === "Type 2") {
+	if (state1 && !state2) {
 		// only one state
-		sortThroughArray(arrayToSort);
+		sortThroughArray(typeEffectiveness[state1]);
 	}
 
-	if (state1 !== "Type 1" && state2 !== "Type 2") {
+	if (state1 && state2) {
 		let mergedArr = typeEffectiveness[state1].map(
 			(type1, index) => type1 * typeEffectiveness[state2][index]
 		);
