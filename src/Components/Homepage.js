@@ -95,7 +95,7 @@ export function Homepage() {
 				<WeakTo type1={type1} type2={type2} />
 			</div>
 			<div className="list-Of-Buttons">
-				<TypeList onAdd={handleAdd} />
+				<TypeList onAdd={handleAdd} type1={type1} type2={type2} />
 			</div>
 		</div>
 	);
