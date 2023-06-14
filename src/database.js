@@ -168,6 +168,43 @@ const attackStats = {
 		1, 1, 0.625, 1, 1, 1, 1.6, 1, 1, 0.625, 1.6, 1, 1, 1, 1, 1.6, 1, 0.625,
 	],
 };
+
+export const checkAttackPotential = (state1, state2) => {
+	let effectObj = {
+		superEffective: [],
+		notVeryEffective: [],
+		weakEffective: [],
+	};
+
+	const sortThroughArray = (array) => {
+		array.forEach((effectiveness, index) => {
+			if (effectiveness === 1.6) {
+				effectObj.superEffective.push(pokemonTypes[index]);
+			}
+			if (effectiveness === 0.625) {
+				effectObj.notVeryEffective.push(pokemonTypes[index]);
+			}
+			if (effectiveness === 0.390625) {
+				effectObj.weakEffective.push(pokemonTypes[index]);
+			}
+		});
+	};
+
+	if (state1 && !state2) {
+		// only one state
+		sortThroughArray(attackStats[state1]);
+	}
+
+	if (state1 && state2) {
+		let mergedArr = attackStats[state1].map((type1, index) =>
+			Math.max(type1, attackStats[state2][index])
+		);
+		sortThroughArray(mergedArr);
+	}
+
+	return effectObj;
+};
+
 /*
 typeEffectiveness.Bug.map((effectiveness, index) => {
     if (effectiveness === 1) {
