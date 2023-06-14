@@ -4,6 +4,8 @@ import { SmallButton } from "../button/SmallButton";
 export function ResistantTo(props) {
 	let type1 = props.type1;
 	let type2 = props.type2;
+	let isShowSTAB = props.isShowSTAB;
+
 	const attackEffectiveness = checkAttackPotential(type1, type2);
 	const addAttackEffectivenessToType = (type) => {
 		let effectiveness;
@@ -53,7 +55,9 @@ export function ResistantTo(props) {
 								<SmallButton
 									typeName={type}
 									key={`${index}-${type}`}
-									effectiveness={effectiveness}
+									effectiveness={
+										isShowSTAB ? effectiveness : "no-stab"
+									}
 								/>
 							);
 						})}
@@ -66,6 +70,9 @@ export function ResistantTo(props) {
 								<SmallButton
 									typeName={type}
 									key={`${index}-${type}`}
+									effectiveness={
+										isShowSTAB ? effectiveness : "no-stab"
+									}
 								/>
 							);
 						})}
@@ -80,7 +87,9 @@ export function ResistantTo(props) {
 								<SmallButton
 									typeName={type}
 									key={`${index}-${type}`}
-									effectiveness={effectiveness}
+									effectiveness={
+										isShowSTAB ? effectiveness : "no-stab"
+									}
 								/>
 							);
 						})}

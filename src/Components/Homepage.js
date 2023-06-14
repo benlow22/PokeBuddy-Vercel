@@ -86,7 +86,11 @@ export function Homepage() {
 	return (
 		<div>
 			<div className="opponent-Stats">
-				<ResistantTo type1={type1} type2={type2} />
+				<ResistantTo
+					type1={type1}
+					type2={type2}
+					isShowSTAB={showSTAB}
+				/>
 				<div className="two-types">
 					<TypeIndicator type={type1} placeholder={"Type 1"} />
 					<TypeIndicator type={type2} placeholder={"Type 2"} />
@@ -94,13 +98,18 @@ export function Homepage() {
 						RESET
 					</button>
 					<div className="settings-bar">
-						<STABbutton />
+						<STABbutton onClick={() => setShowSTAB(!showSTAB)} />
 					</div>
 				</div>
-				<WeakTo type1={type1} type2={type2} />
+				<WeakTo type1={type1} type2={type2} isShowSTAB={showSTAB} />
 			</div>
 			<div className="list-Of-Buttons">
-				<TypeList onAdd={handleAdd} type1={type1} type2={type2} />
+				<TypeList
+					onAdd={handleAdd}
+					type1={type1}
+					type2={type2}
+					isShowSTAB={showSTAB}
+				/>
 			</div>
 		</div>
 	);

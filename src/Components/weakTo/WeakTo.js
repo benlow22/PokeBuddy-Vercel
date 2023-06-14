@@ -4,6 +4,7 @@ import { SmallButton } from "../button/SmallButton";
 export function WeakTo(props) {
 	let type1 = props.type1;
 	let type2 = props.type2;
+	let isShowSTAB = props.isShowSTAB;
 
 	const attackEffectiveness = checkAttackPotential(type1, type2);
 	const addAttackEffectivenessToType = (type) => {
@@ -36,7 +37,9 @@ export function WeakTo(props) {
 								<SmallButton
 									typeName={type}
 									key={`${index}-${type}`}
-									effectiveness={effectiveness}
+									effectiveness={
+										isShowSTAB ? effectiveness : "no-stab"
+									}
 								/>
 							);
 						})}
@@ -51,7 +54,9 @@ export function WeakTo(props) {
 								<SmallButton
 									typeName={type}
 									key={`${index}-${type}`}
-									effectiveness={effectiveness}
+									effectiveness={
+										isShowSTAB ? effectiveness : "no-stab"
+									}
 								/>
 							);
 						})}

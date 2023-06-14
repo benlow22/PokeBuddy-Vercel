@@ -5,6 +5,7 @@ import { checkAttackPotential, pokemonTypes } from "../../database.js";
 export function TypeList(props) {
 	let type1 = props.type1;
 	let type2 = props.type2;
+	let isShowSTAB = props.isShowSTAB;
 	const attackEffectiveness = checkAttackPotential(type1, type2);
 	const addAttackEffectivenessToType = (type) => {
 		let effectiveness;
@@ -32,7 +33,7 @@ export function TypeList(props) {
 						typeName={type}
 						onClick={handleClick}
 						//id={type}
-						effectiveness={effectiveness}
+						effectiveness={isShowSTAB ? effectiveness : "no-stab"}
 						key={`${type}-${index}`}
 					/>
 				);
