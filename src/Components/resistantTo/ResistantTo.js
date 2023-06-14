@@ -1,10 +1,42 @@
-import { checkTypes } from "../../database";
+import { checkAttackPotential, checkTypes } from "../../database";
 import { SmallButton } from "../button/SmallButton";
 
 export function ResistantTo(props) {
 	let type1 = props.type1;
 	let type2 = props.type2;
+	const attackEffectiveness = checkAttackPotential(type1, type2);
+	const addAttackEffectivenessToType = (type) => {
+		let effectiveness;
+		if (attackEffectiveness["superEffective"].includes(type)) {
+			effectiveness = "super-effective";
+		} else if (attackEffectiveness["notVeryEffective"].includes(type)) {
+			effectiveness = "not-very-effective";
+		} else if (attackEffectiveness["weakEffective"].includes(type)) {
+			effectiveness = "weak-effective";
+		}
+		console.log("type:", type, "effect", effectiveness);
+		return effectiveness;
+	};
 
+	// // {
+	// 	"superEffective": [
+	// 		"Dark",
+	// 		"Ice",
+	// 		"Normal",
+	// 		"Rock",
+	// 		"Steel"
+	// 	],
+	// 	"notVeryEffective": [
+	// 		"Bug",
+	// 		"Fairy",
+	// 		"Flying",
+	// 		"Poison",
+	// 		"Psychic"
+	// 	],
+	// 	"weakEffective": [
+	// 		"Ghost"
+	// 	]
+	// }
 	if (type1) {
 		const effectiveness = checkTypes(type1, type2);
 		return (
@@ -15,10 +47,13 @@ export function ResistantTo(props) {
 				<div className="extra-resistant-types types-box">
 					{effectiveness.extraResistant &&
 						effectiveness.extraResistant.map((type, index) => {
+							const effectiveness =
+								addAttackEffectivenessToType(type);
 							return (
 								<SmallButton
 									typeName={type}
 									key={`${index}-${type}`}
+									effectiveness={effectiveness}
 								/>
 							);
 						})}
@@ -38,8 +73,16 @@ export function ResistantTo(props) {
 				<h5>0.625x damage from</h5>
 				<div className="resistant-types types-box">
 					{effectiveness.resistant &&
-						effectiveness.resistant.map((type) => {
-							return <SmallButton typeName={type} />;
+						effectiveness.resistant.map((type, index) => {
+							const effectiveness =
+								addAttackEffectivenessToType(type);
+							return (
+								<SmallButton
+									typeName={type}
+									key={`${index}-${type}`}
+									effectiveness={effectiveness}
+								/>
+							);
 						})}
 				</div>
 			</div>

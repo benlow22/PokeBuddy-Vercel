@@ -1,16 +1,15 @@
-import React from 'react';
+import React from "react";
 
-
-export function SmallButton (props) {
-    
-    return (
-        <button 
-            //onClick={this.handleClick}
-            disabled
-            className={`small-button ${props.typeName}`}>
-            {props.typeName}
-        </button>
-    )
+export function SmallButton(props) {
+	return (
+		<button
+			//onClick={this.handleClick}
+			disabled
+			className={`small-button ${props.typeName} ${props.effectiveness}-attack`}
+		>
+			{props.typeName}
+		</button>
+	);
 }
 
 /* export class Button extends React.Component {
