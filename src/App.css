@@ -237,6 +237,7 @@ h5 {
 }
 
 .reset-button {
+	margin: 0px 25px;
 	margin-top: 50px;
 	background-color: rgb(103, 103, 103);
 }
@@ -261,6 +262,10 @@ h5 {
 		0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 4px 0 0 #3c5c31,
 		0 4px 0 1px rgba(0, 0, 0, 0.4), 0 5px 4px 1px rgb(43, 77, 43);
 	border-color: rgb(0, 182, 18);
+}
+
+.settings-bar {
+	width: 210px;
 }
 /* // 	],
 // 	"notVeryEffective": [

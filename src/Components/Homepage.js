@@ -4,10 +4,12 @@ import { TypeIndicator } from "./typeIndicators/TypeIndicators";
 import { pokemonTypes, keys } from "../database";
 import { ResistantTo } from "./resistantTo/ResistantTo";
 import { WeakTo } from "./weakTo/WeakTo";
+import { STABbutton } from "./button/STABbutton";
 
 export function Homepage() {
 	const [type1, setType1] = useState(undefined);
 	const [type2, setType2] = useState(undefined);
+	const [showSTAB, setShowSTAB] = useState(false);
 
 	const handleAdd = (type) => {
 		if (!type1) {
@@ -91,6 +93,9 @@ export function Homepage() {
 					<button className="reset-button" onClick={clearButtons}>
 						RESET
 					</button>
+					<div className="settings-bar">
+						<STABbutton />
+					</div>
 				</div>
 				<WeakTo type1={type1} type2={type2} />
 			</div>
